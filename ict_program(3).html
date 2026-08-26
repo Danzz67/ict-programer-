@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Kurikulum ICT - DANZz Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased selection:bg-blue-600 selection:text-white flex flex-col justify-between">
+
+    <!-- Screen Loading / Overlay Formal -->
+    <div id="loading-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-950 transition-opacity duration-500 opacity-100">
+        
+        <div class="relative flex items-center justify-center mb-6">
+            <div id="loading-spinner" class="w-16 h-16 border-2 border-slate-700 border-t-blue-500 rounded-full animate-spin"></div>
+            <!-- Logo Nissan SVG -->
+            <div class="absolute w-10 h-10 flex items-center justify-center">
+                <svg viewBox="0 0 500 500" class="w-full h-full filter drop-shadow">
+                    <circle cx="250" cy="250" r="180" fill="none" stroke="#E2E8F0" stroke-width="28" />
+                    <rect x="50" y="200" width="400" height="100" rx="6" fill="#E2E8F0" />
+                    <text x="250" y="270" font-family="'Inter', sans-serif" font-weight="700" font-size="68" fill="#0F172A" text-anchor="middle" letter-spacing="6">NISSAN</text>
+                </svg>
+            </div>
+        </div>
+
+        <h2 class="text-sm font-semibold tracking-widest text-slate-300 uppercase mb-2">
+            DANZz Educational Project
+        </h2>
+
+        <p id="loading-text" class="text-xs text-slate-500 tracking-wide animate-pulse">Memuat Portal Kurikulum...</p>
+
+        <button id="enter-btn" onclick="enterContent()" class="hidden transform scale-95 opacity-0 transition-all duration-300 bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm py-2.5 px-6 rounded-lg shadow-lg shadow-blue-600/20 cursor-pointer border border-blue-400/30">
+            Akses Modul Pembelajaran &rarr;
+        </button>
+    </div>
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto px-4 py-12 w-full">
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-6 sm:p-10 shadow-xl space-y-8">
+            
+            <!-- Header Section -->
+            <header class="border-b border-slate-800 pb-6 flex items-center gap-5">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 shrink-0 flex items-center justify-center bg-slate-800/50 rounded-lg p-2 border border-slate-700/50">
+                    <svg viewBox="0 0 500 500" class="w-full h-full">
+                        <circle cx="250" cy="250" r="180" fill="none" stroke="#CBD5E1" stroke-width="28" />
+                        <rect x="50" y="200" width="400" height="100" rx="6" fill="#CBD5E1" />
+                        <text x="250" y="270" font-family="'Inter', sans-serif" font-weight="700" font-size="68" fill="#0F172A" text-anchor="middle" letter-spacing="6">NISSAN</text>
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-blue-400">Program Pembelajaran</span>
+                    <h1 class="text-xl sm:text-2xl font-bold text-slate-100 leading-tight">
+                        Information and Communication Technology (ICT)
+                    </h1>
+                </div>
+            </header>
+
+            <!-- Pengantar -->
+            <section class="space-y-3">
+                <h2 class="text-base font-semibold text-slate-200 flex items-center gap-2">
+                    <span class="w-1.5 h-4 bg-blue-500 rounded-full"></span>
+                    Pendahuluan Program
+                </h2>
+                <div class="space-y-2 text-slate-400 text-sm sm:text-base leading-relaxed pl-4 border-l border-slate-800">
+                    <p>Program kurikulum ICT ini dirancang secara komprehensif untuk memberikan pemahaman mendalam terkait teknologi informasi dan komputasi modern.</p>
+                    <p>Peserta didik diproyeksikan untuk mengembangkan kompetensi teknis melalui integrasi pemahaman teoritis serta implementasi praktik secara terstruktur.</p>
+                </div>
+            </section>
+
+            <!-- Grid Topik & Roadmap -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Topik Pembelajaran -->
+                <section class="bg-slate-950/50 border border-slate-800 rounded-lg p-5">
+                    <h2 class="text-sm font-semibold text-slate-300 mb-3 uppercase tracking-wider flex items-center gap-2">
+                        <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        Materi Utama Kurikulum
+                    </h2>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li class="flex items-center gap-3 bg-slate-900 px-3 py-2 rounded border border-slate-800/80">
+                            <span class="w-2 h-2 rounded-full bg-blue-400"></span> HyperText Markup Language (HTML)
+                        </li>
+                        <li class="flex items-center gap-3 bg-slate-900 px-3 py-2 rounded border border-slate-800/80">
+                            <span class="w-2 h-2 rounded-full bg-blue-400"></span> Cascading Style Sheets (CSS)
+                        </li>
+                        <li class="flex items-center gap-3 bg-slate-900 px-3 py-2 rounded border border-slate-800/80">
+                            <span class="w-2 h-2 rounded-full bg-blue-400"></span> JavaScript Programming
+                        </li>
+                        <li class="flex items-center gap-3 bg-slate-900 px-3 py-2 rounded border border-slate-800/80">
+                            <span class="w-2 h-2 rounded-full bg-blue-400"></span> Hypertext Preprocessor (PHP)
+                        </li>
+                        <li class="flex items-center gap-3 bg-slate-900 px-3 py-2 rounded border border-slate-800/80">
+                            <span class="w-2 h-2 rounded-full bg-blue-400"></span> MySQL Database Management
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Alur Pembelajaran -->
+                <section class="bg-slate-950/50 border border-slate-800 rounded-lg p-5">
+                    <h2 class="text-sm font-semibold text-slate-300 mb-3 uppercase tracking-wider flex items-center gap-2">
+                        <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        Alur Pembelajaran
+                    </h2>
+                    <ol class="space-y-2 text-sm text-slate-300">
+                        <li class="flex items-center gap-3 bg-slate-900 px-3 py-2 rounded border border-slate-800/80">
+                            <span class="text-xs font-semibold text-slate-500 w-4">01.</span> Penguasaan Struktur Web (HTML)
+                        </li>
+                        <li class="flex items-center gap-3 bg-slate-900 px-3 py-2 rounded border border-slate-800/80">
+                            <span class="text-xs font-semibold text-slate-500 w-4">02.</span> Perancangan Tampilan & Tata Letak (CSS)
+                        </li>
+                        <li class="flex items-center gap-3 bg-slate-900 px-3 py-2 rounded border border-slate-800/80">
+                            <span class="text-xs font-semibold text-slate-500 w-4">03.</span> Pengembangan Interaktivitas (JavaScript)
+                        </li>
+                        <li class="flex items-center gap-3 bg-slate-900 px-3 py-2 rounded border border-slate-800/80">
+                            <span class="text-xs font-semibold text-slate-500 w-4">04.</span> Pemrograman Sisi Server (PHP)
+                        </li>
+                        <li class="flex items-center gap-3 bg-slate-900 px-3 py-2 rounded border border-slate-800/80">
+                            <span class="text-xs font-semibold text-slate-500 w-4">05.</span> Pengelolaan Basis Data System (MySQL)
+                        </li>
+                    </ol>
+                </section>
+            </div>
+
+            <!-- Definisi Teknologi -->
+            <section class="space-y-3">
+                <h2 class="text-base font-semibold text-slate-200 flex items-center gap-2">
+                    <span class="w-1.5 h-4 bg-blue-500 rounded-full"></span>
+                    Glosarium & Definisi Spesifikasi
+                </h2>
+                <dl class="grid grid-cols-1 gap-3">
+                    <div class="bg-slate-950/40 border border-slate-800 p-4 rounded-lg">
+                        <dt class="font-semibold text-slate-200 text-sm">HTML (HyperText Markup Language)</dt>
+                        <dd class="text-slate-400 text-sm mt-1">Bahasa markah standar yang digunakan untuk membangun dan menyusun fondasi struktur dokumen web.</dd>
+                    </div>
+                    <div class="bg-slate-950/40 border border-slate-800 p-4 rounded-lg">
+                        <dt class="font-semibold text-slate-200 text-sm">CSS (Cascading Style Sheets)</dt>
+                        <dd class="text-slate-400 text-sm mt-1">Bahasa desain yang berfungsi mengatur tata letak, visualisasi, dan estetika elemen pada halaman web.</dd>
+                    </div>
+                    <div class="bg-slate-950/40 border border-slate-800 p-4 rounded-lg">
+                        <dt class="font-semibold text-slate-200 text-sm">JavaScript</dt>
+                        <dd class="text-slate-400 text-sm mt-1">Bahasa pemrograman tingkat tinggi untuk mengimplementasikan fungsionalitas dan interaktivitas dinamis.</dd>
+                    </div>
+                </dl>
+            </section>
+
+            <!-- Pengumuman Resmi -->
+            <section class="bg-blue-950/30 border border-blue-900/50 rounded-lg p-4 sm:p-5">
+                <h2 class="text-blue-400 font-semibold text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Pemberitahuan Akademik
+                </h2>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                    <strong class="text-slate-100 font-semibold">Persyaratan Wajib:</strong> Seluruh siswa diwajibkan menyelesaikan setiap penugasan praktikum ICT sesuai standar kelulusan dan batas waktu yang telah ditentukan.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer Formal (Di dalam <body>) -->
+    <footer class="py-6 border-t border-slate-800/50 bg-slate-950 text-center text-xs text-slate-500 space-y-1">
+        <p>&copy; 2026 DANZz Project. Hak Cipta Dilindungi Undang-Undang.</p>
+        <p class="text-[11px] text-slate-600">
+            Seluruh merek dagang dan nama produk yang tercantum merupakan hak milik masing-masing pemegang lisensi resmi.
+        </p>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-spinner').classList.add('hidden');
+                document.getElementById('loading-text').classList.add('hidden');
+                
+                const enterBtn = document.getElementById('enter-btn');
+                enterBtn.classList.remove('hidden');
+                setTimeout(() => {
+                    enterBtn.classList.remove('opacity-0', 'scale-95');
+                    enterBtn.classList.add('opacity-100', 'scale-100');
+                }, 50);
+            }, 1000);
+        });
+
+        function enterContent() {
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.classList.add('opacity-0');
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }
+    </script>
+</body>
+</html>

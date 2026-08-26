@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ CRITICAL SYSTEM ERROR - Threat Detected!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-3px, 3px) }
+            40% { transform: translate(-3px, -3px) }
+            60% { transform: translate(3px, 3px) }
+            80% { transform: translate(3px, -3px) }
+            100% { transform: translate(0) }
+        }
+        .animate-glitch {
+            animation: glitch 0.2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-black text-green-500 font-mono min-h-screen flex flex-col justify-between p-6 select-none overflow-hidden">
+
+    <!-- Header Alert -->
+    <div class="border-2 border-red-600 bg-red-950/40 p-4 rounded-lg animate-pulse flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <span class="text-3xl">⚠️</span>
+            <div>
+                <h1 class="text-red-500 font-bold text-lg sm:text-xl tracking-wider">CRITICAL SYSTEM WARNING</h1>
+                <p class="text-xs text-red-300">Unauthorized System Access Detected</p>
+            </div>
+        </div>
+        <span class="text-xs bg-red-600 text-white font-bold px-3 py-1 rounded-full animate-bounce">SIMULATION</span>
+    </div>
+
+    <!-- Terminal / Console Visual Effect -->
+    <div class="my-6 space-y-2 text-sm sm:text-base h-64 overflow-y-auto" id="console-output">
+        <p class="text-slate-400">> Initializing security scan...</p>
+        <p class="text-red-400">> Threat detected: Trojan.Win32.FakeAlert</p>
+        <p class="text-yellow-400">> Memory corruption at address 0x00048F...</p>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="space-y-2 border-t border-green-800 pt-4">
+        <div class="flex justify-between text-xs text-green-400">
+            <span>System Override Progress:</span>
+            <span id="progress-text">0%</span>
+        </div>
+        <div class="w-full bg-slate-900 h-4 rounded-full border border-green-600/50 overflow-hidden">
+            <div id="progress-bar" class="bg-red-600 h-full w-0 transition-all duration-300"></div>
+        </div>
+    </div>
+
+    <!-- Controls untuk Keluar -->
+    <div class="mt-6 text-center space-y-3">
+        <p class="text-xs text-slate-500">Tekan tombol <kbd class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">ESC</kbd> untuk menghentikan efek ini.</p>
+        <button onclick="stopSimulation()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs px-4 py-2 rounded-lg border border-slate-600 transition">
+            Stop Simulasi Visual
+        </button>
+    </div>
+
+    <script>
+        const logs = [
+            "> Accessing C:\\Windows\\System32...",
+            "> Overwriting registry keys...",
+            "> Downloading dummy_payload.bin...",
+            "> Encrypting user documents (Simulated)...",
+            "> Connection established to remote server 192.168.1.1...",
+            "> System memory overload threshold reached!",
+            "> CRITICAL: Data integrity compromise detected!"
+        ];
+
+        const fastLogs = [
+            "[STREAM] Injecting payload block #",
+            "[SYSTEM] Memory allocation overflow at 0x",
+            "[NETWORK] Packet flood sent to port ",
+            "[WARNING] High activity detected in thread #"
+        ];
+
+        let logIndex = 0;
+        let progress = 0;
+        const consoleOutput = document.getElementById('console-output');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+
+        // Loop Teks Utama Konsol
+        const logInterval = setInterval(() => {
+            if (logIndex < logs.length) {
+                const p = document.createElement('p');
+                p.className = logIndex % 2 === 0 ? "text-red-400" : "text-yellow-400";
+                p.textContent = logs[logIndex];
+                consoleOutput.appendChild(p);
+                consoleOutput.scrollTop = consoleOutput.scrollHeight;
+                logIndex++;
+            } else {
+                logIndex = 0;
+            }
+        }, 800);
+
+        // Loop Efek Teks Log Cepat (Stream)
+        const fastLogInterval = setInterval(() => {
+            const p = document.createElement('p');
+            p.className = "text-red-500/80 font-mono text-xs";
+            const randomHex = Math.floor(Math.random() * 65535).toString(16).toUpperCase();
+            const randomType = fastLogs[Math.floor(Math.random() * fastLogs.length)];
+            p.textContent = `${randomType}${randomHex}`;
+            consoleOutput.appendChild(p);
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        }, 150);
+
+        // Loop Progress Bar
+        const progressInterval = setInterval(() => {
+            if (progress < 100) {
+                progress += Math.floor(Math.random() * 8) + 1;
+                if (progress > 100) progress = 100;
+                progressBar.style.width = progress + '%';
+                progressText.textContent = progress + '%';
+            } else {
+                document.body.classList.add('animate-glitch');
+            }
+        }, 400);
+
+        // Fungsi Hentikan Simulasi
+        function stopSimulation() {
+            clearInterval(logInterval);
+            clearInterval(fastLogInterval);
+            clearInterval(progressInterval);
+            document.body.classList.remove('animate-glitch');
+            document.title = "DANZz Project - Normal Mode";
+            document.body.innerHTML = `
+                <div class="flex flex-col items-center justify-center h-screen text-center p-6 space-y-4">
+                    <h1 class="text-3xl font-bold text-green-400">✅ Simulasi Selesai</h1>
+                    <p class="text-slate-300 text-sm">Tidak ada perubahan atau bahaya apa pun pada perangkat Anda.</p>
+                    <button onclick="location.reload()" class="bg-green-600 hover:bg-green-500 text-white font-bold px-6 py-2 rounded-lg transition">
+                        Coba Lagi
+                    </button>
+                </div>
+            `;
+        }
+
+        // Event Listener untuk Tombol ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' || event.key === 'Esc') {
+                stopSimulation();
+            }
+        });
+    </script>
+</body>
+</html>
