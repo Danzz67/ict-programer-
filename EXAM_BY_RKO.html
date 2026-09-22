@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>ICT EXAM SUNGGUH MENGGERIKANNNN 🗿</title> 
+</head>
+<body class="bg-gradient-to-b from-[#FF10F0] to-[#00F0FF] min-h-screen py-10 px-4 font-sans text-slate-800">
+
+  <div class="max-w-4xl mx-auto space-y-8">
+    
+    <header class="text-center">
+      <h1 class="text-4xl md:text-5xl font-black mb-2 text-transparent bg-clip-text bg-sky-400">
+        LOMBA
+      </h1>
+      <p class="text-slate-500 text-sm md:text-base">
+        Tunjukkan kreativitasmu di berbagai bidang
+      </p>
+    </header>
+
+    <main>
+      <section class="bg-white rounded-2xl p-6 md:p-8 shadow-md border border-slate-200">
+        <form id="registrationForm" class="flex flex-col gap-4 text-left">
+          <h2 class="text-2xl font-black text-sky-900 tracking-tight mb-2">REGISTRATION FORM</h2>
+          
+          <div>
+            <label for="participantName" class="block text-sm font-bold text-sky-900 mb-1">NAME:</label>
+            <input 
+              type="text" 
+              id="participantName" 
+              placeholder="Your name" 
+              required 
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors"
+            />
+          </div>
+
+          <div>
+            <label for="classInput" class="block text-sm font-bold text-sky-900 mb-1">CLASS:</label>
+            <select id="classInput" required class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+              <option value="">SELECT A CLASSROOM</option>
+              <option value="X">X</option>
+              <option value="XI">XI</option>
+              <option value="XII">XII</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="gender" class="block text-sm font-bold text-sky-900 mb-1">GENDER:</label>
+            <select id="gender" required class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+              <option value="">SELECT A GENDER</option>
+              <option value="Male">MALE</option>
+              <option value="Female">FEMALE</option>
+            </select>
+          </div>                     
+
+          <div>
+            <label for="categoryInput" class="block text-sm font-bold text-sky-900 mb-1">PROGRAM SELECT:</label>
+            <select id="categoryInput" required class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+              <option value="">SELECT</option>
+              <option value="Web Development">WEB DEVELOPMENT</option>                        
+              <option value="IoT Project">IoT PROJECT</option>                       
+              <option value="Graphic Design">GRAPHIC DESIGN</option>
+              <option value="Public Speaking">PUBLIC SPEAKING</option>
+              <option value="Photography">PHOTOGRAPHY</option>
+            </select>
+          </div>     
+
+          <div>
+            <label for="participantType" class="block text-sm font-bold text-sky-900 mb-1">PARTICIPANT TYPE:</label>
+            <select id="participantType" required class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+              <option value="">SELECT</option>
+              <option value="INDIVIDUAL">INDIVIDUAL</option>                        
+              <option value="TEAM">TEAM</option>
+            </select>
+          </div>                    
+
+          <div>
+            <label for="teamInput" class="block text-sm font-bold text-sky-900 mb-1">TEAM NAME:</label>
+            <input 
+              type="text" 
+              id="teamInput" 
+              placeholder="Your team name (beri - jika individu)" 
+              required 
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors"
+            />
+          </div>                    
+
+          <div>
+            <label for="contactNumber" class="block text-sm font-bold text-sky-900 mb-1">CONTACT NUMBER:</label>
+            <input 
+              type="tel" 
+              id="contactNumber" 
+              placeholder="Your contact number" 
+              required 
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors"
+            />
+          </div>                    
+
+          <div>
+            <label for="projectDesc" class="block text-sm font-bold text-sky-900 mb-1">PROJECT DESCRIPTION:</label>
+            <input 
+              type="text" 
+              id="projectDesc" 
+              placeholder="Your description" 
+              required 
+              class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors"
+            />
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm rounded-lg shadow-md transition-colors capitalize mt-4">
+            REGISTER NOW!
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-md border border-slate-200">
+      <h2 class="text-2xl font-black text-slate-800 tracking-tight mb-4"> Participant Table</h2>
+      
+      <div class="overflow-x-auto rounded-lg border border-slate-200">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-[#7a1518] text-white font-semibold text-sm">
+              <th class="p-3 border-b">No</th>
+              <th class="p-3 border-b">Participant</th>
+              <th class="p-3 border-b">Class</th>
+              <th class="p-3 border-b">Category</th>
+              <th class="p-3 border-b">Team</th>
+              <th class="p-3 border-b">Status</th>
+            </tr>
+          </thead>
+          <tbody id="participantTableBody" class="text-sm divide-y divide-slate-200">
+            <tr>
+              <td class="p-3">1</td>
+              <td class="p-3 font-medium">budi racingg</td>
+              <td class="p-3">X</td>
+              <td class="p-3">Web Development</td>
+              <td class="p-3">siluman macan</td>
+              <td class="p-3 text-emerald-600 font-medium">Registered</td>
+            </tr>
+            <tr>
+              <td class="p-3">2</td>
+              <td class="p-3 font-medium">wahyu kentuky</td>
+              <td class="p-3">XI</td>
+              <td class="p-3">IoT Project</td>
+              <td class="p-3">kopling½</td>
+              <td class="p-3 text-amber-600 font-medium">Pending</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    const tableBody = document.getElementById('participantTableBody');
+    let rowCount = tableBody.getElementsByTagName('tr').length + 1;
+
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+      e.preventDefault(); 
+      const participant = document.getElementById('participantName').value;
+      const className = document.getElementById('classInput').value;
+      const category = document.getElementById('categoryInput').value;
+      const team = document.getElementById('teamInput').value;
+      const status = "Registered"; 
+      const newRow = document.createElement('tr');
+
+      newRow.innerHTML = `
+        <td class="p-3">${rowCount}</td>
+        <td class="p-3 font-medium">${participant}</td>
+        <td class="p-3">${className}</td>
+        <td class="p-3">${category}</td>
+        <td class="p-3">${team}</td>
+        <td class="p-3 text-emerald-600 font-medium">${status}</td>
+      `;
+
+      tableBody.appendChild(newRow);
+
+      rowCount++;
+      this.reset();
+    });
+  </script>
+</body>
+</html>
+<!-- maaf miss ,belom ku modifff-->

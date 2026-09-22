@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Produk Neon - ICT Ujian</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans">
+
+  <!-- 1. NAVBAR HEADER -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <div class="w-4 h-4 rounded-full bg-[#FF10F0] shadow-[0_0_10px_#FF10F0]"></div>
+        <span class="font-extrabold text-xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#FF10F0] to-[#00F0FF]">
+          CYBERSTORE
+        </span>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
+        <a href="#" class="text-[#00F0FF] hover:text-white transition">Beranda</a>
+        <a href="#" class="hover:text-white transition">Katalog</a>
+        <a href="#" class="hover:text-white transition">Tentang</a>
+      </nav>
+      <button class="bg-[#FF10F0] hover:bg-[#FF10F0]/80 text-white font-bold text-xs px-4 py-2 rounded-lg shadow-[0_0_15px_rgba(255,16,240,0.4)] transition">
+        Keranjang (3)
+      </button>
+    </div>
+  </header>
+
+  <!-- 2. JUDUL / HERO SECTION -->
+  <section class="text-center my-10 px-4">
+    <h1 class="text-4xl md:text-5xl font-black mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#FF10F0] via-purple-400 to-[#00F0FF]">
+      Katalog Gear Gaming Neon
+    </h1>
+    <p class="text-slate-400 max-w-lg mx-auto text-sm md:text-base">
+      Lengkapi setup impianmu dengan perlengkapan performa tinggi bernuansa Cyberpunk.
+    </p>
+  </section>
+
+  <!-- 3. GRID PRODUK (UTAMA) -->
+  <main class="max-w-6xl mx-auto px-6 mb-16 flex-grow">
+    <!-- Grid 1 Kolom di HP, 2 Kolom di Tablet, 3 Kolom di Laptop -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- KARTU 1 -->
+      <div class="bg-slate-900/60 border border-slate-800 hover:border-[#FF10F0]/50 rounded-2xl p-5 shadow-lg hover:shadow-[0_0_25px_rgba(255,16,240,0.2)] transition-all duration-300">
+        <div class="h-48 rounded-xl mb-5 flex items-center justify-center bg-gradient-to-br from-[#FF10F0]/20 to-[#00F0FF]/10 border border-[#FF10F0]/30 relative overflow-hidden">
+          <span class="text-5xl">⌨️</span>
+          <span class="absolute top-3 right-3 bg-[#FF10F0] text-white font-bold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">
+            HOT
+          </span>
+        </div>
+        <h3 class="font-bold text-xl mb-1 text-white">Cyber Keyboard RGB</h3>
+        <p class="text-slate-400 text-xs mb-4 line-clamp-2">
+          Mechanical keyboard 75% dengan switch hotswap dan efek lampu Neon RGB yang bisa diatur.
+        </p>
+        <div class="flex items-center justify-between border-t border-slate-800/80 pt-4">
+          <div>
+            <p class="text-[10px] text-slate-500 uppercase font-semibold">Harga</p>
+            <p class="text-[#00F0FF] font-bold text-lg">Rp 850.000</p>
+          </div>
+          <button class="bg-gradient-to-r from-[#FF10F0] to-purple-600 hover:opacity-90 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md transition">
+            + Tambah
+          </button>
+        </div>
+      </div>
+
+      <!-- KARTU 2 -->
+      <div class="bg-slate-900/60 border border-slate-800 hover:border-[#00F0FF]/50 rounded-2xl p-5 shadow-lg hover:shadow-[0_0_25px_rgba(0,240,255,0.2)] transition-all duration-300">
+        <div class="h-48 rounded-xl mb-5 flex items-center justify-center bg-gradient-to-br from-[#00F0FF]/20 to-purple-900/20 border border-[#00F0FF]/30 relative overflow-hidden">
+          <span class="text-5xl">🖱️</span>
+        </div>
+        <h3 class="font-bold text-xl mb-1 text-white">Neon Wireless Mouse</h3>
+        <p class="text-slate-400 text-xs mb-4 line-clamp-2">
+          Mouse ultralight 49g dengan sensor 26K DPI dan koneksi tanpa delay untuk respon cepat.
+        </p>
+        <div class="flex items-center justify-between border-t border-slate-800/80 pt-4">
+          <div>
+            <p class="text-[10px] text-slate-500 uppercase font-semibold">Harga</p>
+            <p class="text-[#00F0FF] font-bold text-lg">Rp 520.000</p>
+          </div>
+          <button class="bg-gradient-to-r from-[#FF10F0] to-purple-600 hover:opacity-90 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md transition">
+            + Tambah
+          </button>
+        </div>
+      </div>
+
+      <!-- KARTU 3 -->
+      <div class="bg-slate-900/60 border border-slate-800 hover:border-[#FF10F0]/50 rounded-2xl p-5 shadow-lg hover:shadow-[0_0_25px_rgba(255,16,240,0.2)] transition-all duration-300">
+        <div class="h-48 rounded-xl mb-5 flex items-center justify-center bg-gradient-to-br from-purple-600/20 to-[#FF10F0]/10 border border-purple-500/30 relative overflow-hidden">
+          <span class="text-5xl">🎧</span>
+        </div>
+        <h3 class="font-bold text-xl mb-1 text-white">Pulse Spatial Headset</h3>
+        <p class="text-slate-400 text-xs mb-4 line-clamp-2">
+          Headset gaming dengan fitur 7.1 surround sound dan mikrofon bertanduk LED yang jernih.
+        </p>
+        <div class="flex items-center justify-between border-t border-slate-800/80 pt-4">
+          <div>
+            <p class="text-[10px] text-slate-500 uppercase font-semibold">Harga</p>
+            <p class="text-[#00F0FF] font-bold text-lg">Rp 1.150.000</p>
+          </div>
+          <button class="bg-gradient-to-r from-[#FF10F0] to-purple-600 hover:opacity-90 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md transition">
+            + Tambah
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 4. FOOTER -->
+  <footer class="border-t border-slate-800/80 py-6 text-center text-xs text-slate-500">
+    <p>&copy;DANZz Project | since 2011</p>
+  </footer>
+
+</body>
+</html>
